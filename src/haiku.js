@@ -6,20 +6,23 @@ export class Haiku{
     }
 
     findLetters(){
-        let lineoneArr = this.lineOne.split("");
+        let lineOneArr = this.lineOne.split("");
         // let lineTwoArr = lineTwo.split("");
         // let lineThreeArr = lineThree.split("");
-
+        if (lineOneArr[lineOneArr.length -1] === 'e'){
+            lineOneArr.pop();
+        }
+        console.log(lineOneArr)
         const vowels = ["a","e","i","o","u"]
-        let vowelCount = 0;
-        for(let i = 0; i < lineoneArr.length; i++){
+        let vowelCountLineOne = 0;
+        for(let i = 0; i < lineOneArr.length; i++){
             for(let j = 0; j < vowels.length; j ++){
-            if(lineoneArr[i] === vowels[j]){
-                vowelCount = vowelCount +1;
+            if(lineOneArr[i] === vowels[j]){
+                vowelCountLineOne = vowelCountLineOne +1;
             }
         }
-            // console.log(vowelCount);
+            // console.log(vowelCountLineOne);
         }
-        return vowelCount;
+         return vowelCountLineOne;
     }
 }
